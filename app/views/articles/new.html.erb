@@ -1,0 +1,26 @@
+<%= form_for @article, html: { multipart: true } do |f| %>
+<div class="form-group">
+  <div class="form-group">
+    <label>Title</label>
+    <%= f.text_field :title, placeholder: "Name" %>
+    <br/>
+  </div>
+  <div class="form-group">
+
+    <label>Body</label>
+    <%= f.text_field :body, placeholder: "Blog body" %>
+    <br />
+  </div>
+
+  <div class="form-group">
+    <label>Image Upload</label>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+    <br />
+  </div>
+
+  <div class="actions">
+  <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
+
+</div>
+<% end %>

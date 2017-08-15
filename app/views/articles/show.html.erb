@@ -1,0 +1,8 @@
+<%= @article.title %>
+<%= @article.body %>
+<% @photos.each do |photo| %>
+  <%= image_tag photo.image %>
+<% end %>
+<%= link_to "edit this article", edit_article_path(@article), class: "btn btn-primary" %>
+<%= link_to "Delete this article", article_path(@article), method: :delete, class: "btn btn-primary",
+  data: { confirm: "Are you sure to delete this lovely artist?"} %>

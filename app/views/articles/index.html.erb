@@ -1,0 +1,20 @@
+<%= link_to "add an article", new_article_path, class: "btn btn-primary"  %>
+
+<div class="row">
+  <% @articles.each do |article|%>
+    <div class="col-sm-6 text-center">
+      <div class="form-group">
+        <h3><b><%= link_to article.title, article_path(article.id) %></b></h3>
+      </div>
+      <div class="form-group">
+        <p><%= article.body %></p>
+      </div>
+      <div class="form-group">
+        <% article.photos.each do |photo| %>
+        <%= image_tag photo.image %>
+        <% end %>
+      </div>
+    </div>
+  <%end%>
+</div>
+<hr />
