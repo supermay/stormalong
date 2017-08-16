@@ -1,0 +1,9 @@
+<footer class="footer">
+  <div class="container">
+    <% if !user_signed_in? %>
+      <%= link_to raw("<span class='glyphicon glyphicon-off' aria-hidden='true'></span>"), new_user_session_path %>
+    <% else %>
+     <%= link_to raw("<span class='glyphicon glyphicon-off' aria-hidden='true'></span>"), destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+</footer>
