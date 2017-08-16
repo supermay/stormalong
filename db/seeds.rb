@@ -1,6 +1,8 @@
 Photo.destroy_all
 Article.destroy_all
 
+user = User.create!({email: "covfefe@gmail.com", password: "covfefe"})
+
 no_pic_article = Article.create!(title: "I have no pics", body: "I have absolutely no pics")
 test_article = Article.create!(title: "Test article 1", body: "I am a test with 3 pics")
 
