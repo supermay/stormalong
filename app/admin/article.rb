@@ -17,11 +17,13 @@ permit_params :title, :body, :created_at, :updated_at, photos: []
 #   column :body
 #   column :created_at
 # end
-
 index do
-   column :id
+   column :id do |article|
+     link_to "#{article.id}", "/admin/articles/#{article.id}"
+   end
    column :title
    column :body
+   column :created_at
   #  column :photos
    column do |article|
      links = link_to "Edit", edit_admin_article_path(article)
@@ -31,4 +33,29 @@ index do
    end
  end
 
+ show do |article|
+   attributes_table do
+     row :title
+     row :body
+     article.photos.each do |photo|
+       row :photo do
+         image_tag(photo.image.url, :height => '256', :width => '256')
+       end
+       row :description do
+         photo.description
+       end
+     end
+   end
+  end
 end
+
+
+
+
+
+ # sidebar "Details", only: :show do
+ #   attributes_table_for article do
+ #     row :title
+ #     row :body
+ #   end
+ # end
