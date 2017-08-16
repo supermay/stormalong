@@ -11,24 +11,18 @@ permit_params :title, :body, :created_at, :updated_at, photos: []
 #   permitted << :other if params[:action] == 'create'
 #   permitted
 # end
-# #
-# index do
-#   column :title
-#   column :body
-#   column :created_at
-# end
 
 index do
-   column :id
-   column :title
-   column :body
-  #  column :photos
-   column do |article|
+  column :id
+  column :title
+  column :body
+  column do |article|
      links = link_to "Edit", edit_admin_article_path(article)
      links += " "
      links += link_to "Delete", admin_article_path(article), :method => :delete, data: { confirm: "Are you sure?" }
      links
    end
+
  end
 
 end
