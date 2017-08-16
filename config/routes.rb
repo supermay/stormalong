@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root "articles#index"
+  root "admin/dashboard#index"
   devise_scope :user do
     get "/users/sign_up", :to => "articles#index"
   end
