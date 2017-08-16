@@ -1,4 +1,6 @@
-<%= link_to "add an article", new_article_path, class: "btn btn-primary"  %>
+<% if user_signed_in? %>
+  <%= link_to "add an article", new_article_path, class: "btn btn-primary"  %>
+<% end %>
 
 <div class="row">
   <% @articles.each do |article|%>
