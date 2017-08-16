@@ -13,11 +13,14 @@ permit_params :image, :featured, :article_id, :description, :created_at, :update
 # end
 
 index do
-  column :article_id
+  column :id do |photo|
+    link_to "#{photo.id}", "/admin/photos/#{photo.id}"
+  end
 
-   column :id do |photo|
-     link_to "#{photo.id}", "/admin/photos/#{photo.id}"
-   end
+  column :article do |photo|
+    link_to Article.find(photo.article_id).title, admin_article_path(photo.article_id)
+  end
+
 
    column :description
    column :image do |photo|
