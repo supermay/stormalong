@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root "articles#index"
   devise_scope :user do
     get "/users/sign_up", :to => "articles#index"
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :articles
-    resources :photos    
+    resources :photos
   end
 
 end

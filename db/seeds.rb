@@ -30,3 +30,4 @@ pic12 = Photo.create!(article: test_article_4, featured:true, remote_image_url: 
 pic13 = Photo.create!(article: test_article_4, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806527/stormalong/Screen_Shot.png")
 
 puts "#{Article.all.count} articles were created - and also #{Photo.all.count} photos."
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
