@@ -1,23 +1,11 @@
 ActiveAdmin.register Article do
   form partial: "form"
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
   permit_params :title, :body, :created_at, :updated_at, photos: []
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create'
-#   permitted
-# end
 
 index do
    column :title do |article|
      link_to "#{article.title}", "/admin/articles/#{article.id}"
    end
-   column :body
    column :number_of_photos do |article|
      article.photos.length
    end
