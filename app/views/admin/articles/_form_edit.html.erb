@@ -13,11 +13,13 @@
     <%= semantic_form_for [:admin, photo], builder: Formtastic::FormBuilder do |t| %>
     <%= t.semantic_errors %>
       <%= t.inputs do %>
-        <%= t.input :featured %>
         <%= t.input :description %>
-        <%= image_tag photo.image.thumbnail %>
-        <%= link_to "Delete", admin_photo_path( photo.id ), method: :delete %>
-        <hr>
+        <%= t.input :featured %>
+        <div class='form_additional_field'>
+          <%= image_tag photo.image.thumbnail %>
+          <%= link_to "Delete", admin_photo_path( photo.id ), method: :delete %>
+          <hr>
+        </div>
       <% end %>
       <%= t.actions %>
     <% end %>
