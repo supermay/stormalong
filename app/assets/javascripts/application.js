@@ -1,7 +1,6 @@
 // application.js
 
 //= require jquery
-//= require underscore
 //= require gmaps/google
 //= require ckeditor/init
 //= require bootstrap-sprockets
