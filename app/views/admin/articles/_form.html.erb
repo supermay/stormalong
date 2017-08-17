@@ -1,0 +1,5 @@
+<% if @article.new_record? %>
+  <%= render partial: "form_new", resource: @article %>
+<% else %>
+  <%= render partial: "form_edit", resource: @article %>
+<% end %>
