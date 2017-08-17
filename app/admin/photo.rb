@@ -1,4 +1,8 @@
 ActiveAdmin.register Photo do
+
+  # see ref. https://stackoverflow.com/questions/10462314/how-can-i-have-an-active-admin-nested-and-non-nested-resource-view
+  # belongs_to :article, optional: true
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -21,7 +25,6 @@ index do
     link_to Article.find(photo.article_id).title, admin_article_path(photo.article_id)
   end
 
-
    column :description
    column :image do |photo|
      image_tag(photo.image.url, :height => '256', :width => '256')
@@ -37,6 +40,17 @@ index do
    end
  end
 
-
+   show do |photo|
+     attributes_table do
+       row :photo do
+          image_tag(photo.image.thumbnail)
+        end
+       row :description
+       row :article do
+         link_to Article.find(photo.article_id).title, admin_article_path(photo.article_id)
+       end
+       row :featured
+    end
+  end
 
 end

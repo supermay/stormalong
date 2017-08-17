@@ -3,15 +3,19 @@
   <%= f.inputs do %>
     <%= f.input :title %>
     <%= f.input :body, as: :ckeditor %>
-
-    <% if @article.photos %>
-      <% @article.photos.each do |photo| %>
-          <%= image_tag photo.image.thumbnail %>
-          <%= link_to "Delete", admin_photo_path( photo.id ), method: :delete %>
-      <% end %>
-    <% end %>
     <hr>
-    <%= file_field_tag "images[]", type: :file, multiple: true %>
-  <% end %>
-  <%= f.actions %>
+    <div class='form_additional_field'>
+      <% if @article.photos %>
+        <% @article.photos.each do |photo| %>
+            <%= image_tag photo.image.thumbnail %>
+            <div class='delete_btn'>
+              <%= link_to "x", admin_photo_path( photo.id ), method: :delete %>
+            </div>
+        <% end %>
+      <% end %>
+      <hr>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+    <% end %>
+      <%= f.actions %>
 <% end %>
