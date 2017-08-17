@@ -23,6 +23,7 @@ index do
 
 
    column :description
+   column :featured
    column :image do |photo|
      image_tag(photo.image.url, :height => '256', :width => '256')
    end
@@ -36,6 +37,31 @@ index do
      links
    end
  end
+
+ controller do
+   def update
+     update! do |format|
+       format.html { redirect_to edit_admin_article_path(resource.article_id) }
+     end
+   end
+
+   def create
+     create! do |format|
+       format.html { redirect_to edit_admin_article_path(resource.article_id) }
+     end
+   end
+
+   def destroy
+     destroy! do |format|
+       format.html { redirect_to edit_admin_article_path(resource.article_id) }
+     end
+   end
+
+
+ end
+
+
+
 
 
 
