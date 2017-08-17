@@ -1,3 +1,5 @@
+User.destroy_all
+AdminUser.destroy_all
 Photo.destroy_all
 Article.destroy_all
 
@@ -31,3 +33,4 @@ pic13 = Photo.create!(article: test_article_4, featured:false, remote_image_url:
 
 puts "#{Article.all.count} articles were created - and also #{Photo.all.count} photos."
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+puts "#{AdminUser.all.count} admins were created"
