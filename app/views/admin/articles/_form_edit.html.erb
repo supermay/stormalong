@@ -3,8 +3,15 @@
   <%= f.inputs do %>
     <%= f.input :title %>
     <%= f.input :body, as: :ckeditor %>
+
+    <% if @article.photos %>
+      <% @article.photos.each do |photo| %>
+          <%= image_tag photo.image.thumbnail %>
+          <%= link_to "Delete", admin_photo_path( photo.id ), method: :delete %>
+      <% end %>
+    <% end %>
+    <hr>
     <%= file_field_tag "images[]", type: :file, multiple: true %>
-    <%=  %>
   <% end %>
   <%= f.actions %>
 <% end %>
