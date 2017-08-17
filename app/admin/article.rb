@@ -30,7 +30,7 @@ index do
      links += link_to "Delete", admin_article_path(article), :method => :delete, data: { confirm: "Are you sure?" }
      links
    end
-
+end
 
  show do |article|
    attributes_table do
@@ -47,6 +47,8 @@ index do
     end
   end
 end
+
+
  # sidebar "Details", only: :show do
  #   attributes_table_for article do
  #     row :title
