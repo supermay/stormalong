@@ -19,15 +19,15 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin details" do
       f.input :email
-      # f.input :password
-      # f.input :password_confirmation
+      f.input :password
+      f.input :password_confirmation
     end
     f.actions
   end
 
-  after_create { |admin| admin.send_reset_password_instructions }
-  def password_required?
-    new_record? ? false : super
-  end
+  # after_create { |admin| admin.send_reset_password_instructions }
+  # def password_required?
+  #   new_record? ? false : super
+  # end
 
 end
