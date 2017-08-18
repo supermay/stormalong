@@ -1,19 +1,10 @@
-<%= semantic_form_for [:admin, @article], builder: Formtastic::FormBuilder do |f| %>
+<%= semantic_form_for [:admin, @article],html: {:multipart => true} ,builder: Formtastic::FormBuilder do |f| %>
   <%= f.semantic_errors %>
+
   <%= f.inputs do %>
     <%= f.input :title %>
-    <%= f.input :body, as: :ckeditor %> 
-  <% end %>
+    <%= f.input :body, as: :ckeditor %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+    <% end %>
   <%= f.actions %>
-<% end %>
-
-<%= semantic_form_for [:admin, @article.photos.new], builder: Formtastic::FormBuilder do |k| %>
-  <%= k.semantic_errors %>
-  <%= k.inputs do %>
-    <%= k.input :description %>
-    <%= k.input :featured %>
-    <%= k.input :article %>
-    <%= k.input :image %>
-  <% end %>
-  <%= k.actions %>
 <% end %>

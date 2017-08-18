@@ -41,7 +41,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Photos" do
           ul do
             Photo.recent(5).map do |photo|
-              li link_to image_tag(photo.image.url, :height => '512', :width => '512'), admin_photo_path(photo)
+              li link_to image_tag(photo.image.thumbnail), admin_article_photo_path(photo.article_id,photo)
               li photo.description
             end
           end

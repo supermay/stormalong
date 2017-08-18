@@ -26,7 +26,7 @@ end
      row :body
      article.photos.each do |photo|
        row :photo do
-         link_to image_tag(photo.image.thumbnail), admin_photo_path(photo)
+         link_to image_tag(photo.image.thumbnail), admin_article_photo_path(article,photo)
        end
        row :description do
          photo.description
@@ -37,6 +37,19 @@ end
 
   filter :title
   filter :created_at
+
+  controller do
+
+    def create
+      create! do |format|
+        format.html { redirect_to edit_admin_article_path(resource.id) }
+      end
+    end
+
+  end
+
+
+
 
   # config.batch_actions = true
   # batch_action :flag do |ids|
