@@ -1,4 +1,5 @@
 ActiveAdmin.register Photo do
+  belongs_to :article
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -13,7 +14,7 @@ permit_params :image, :featured, :article_id, :description, :created_at, :update
 # end
 
 index do
-  column :id do |photo|
+  column :id do |photo|``
     link_to "#{photo.id}", "/admin/photos/#{photo.id}"
   end
 
@@ -39,6 +40,7 @@ index do
  end
 
  controller do
+
    def update
      update! do |format|
        format.html { redirect_to edit_admin_article_path(resource.article_id) }
@@ -57,11 +59,10 @@ index do
      end
    end
 
-
  end
 
 
-
+  config.filters = false
 
 
 

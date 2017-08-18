@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
+  config.batch_actions = false
 
   index do
     selectable_column
@@ -29,5 +30,8 @@ ActiveAdmin.register AdminUser do
   # def password_required?
   #   new_record? ? false : super
   # end
+
+
+
 
 end

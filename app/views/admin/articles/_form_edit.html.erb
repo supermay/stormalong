@@ -4,37 +4,35 @@
     <%= f.input :title %>
     <%= f.input :body, as: :ckeditor %>
     <hr>
+    <%= f.actions %>
   <% end %>
-  <%= f.actions %>
 <% end %>
 
 <% if @article.photos %>
   <% @article.photos.each do |photo| %>
-    <%= semantic_form_for [:admin, photo], builder: Formtastic::FormBuilder do |t| %>
+    <%= semantic_form_for [:admin, @article,photo], builder: Formtastic::FormBuilder do |t| %>
     <%= t.semantic_errors %>
       <%= t.inputs do %>
         <%= t.input :description %>
         <%= t.input :featured %>
         <div class='form_additional_field'>
           <%= image_tag photo.image.thumbnail %>
-          <%= link_to "Delete", admin_photo_path( photo.id ), method: :delete %>
-          <hr>
+          <%= link_to "Delete", admin_article_photo_path(@article,photo.id ), method: :delete %>
         </div>
+        <%= t.actions %>
       <% end %>
-      <%= t.actions %>
     <% end %>
   <% end %>
 <% end %>
 
 
 
-<%= semantic_form_for [:admin, @article.photos.new], builder: Formtastic::FormBuilder do |k| %>
+<%= semantic_form_for [:admin, @article,@article.photos.new], builder: Formtastic::FormBuilder do |k| %>
   <%= k.semantic_errors %>
   <%= k.inputs do %>
     <%= k.input :description %>
     <%= k.input :featured %>
-    <%= k.input :article %>
     <%= k.input :image %>
+    <%= k.actions %>
   <% end %>
-  <%= k.actions %>
 <% end %>
