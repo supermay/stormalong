@@ -4,8 +4,8 @@
     <%= f.input :title %>
     <%= f.input :body, as: :ckeditor %>
     <hr>
+    <%= f.actions %>
   <% end %>
-  <%= f.actions %>
 <% end %>
 
 <% if @article.photos %>
@@ -19,8 +19,8 @@
           <%= image_tag photo.image.thumbnail %>
           <%= link_to "Delete", admin_article_photo_path(@article,photo.id ), method: :delete %>
         </div>
+        <%= t.actions %>
       <% end %>
-      <%= t.actions %>
     <% end %>
   <% end %>
 <% end %>
@@ -33,6 +33,6 @@
     <%= k.input :description %>
     <%= k.input :featured %>
     <%= k.input :image %>
+    <%= k.actions %>
   <% end %>
-  <%= k.actions %>
 <% end %>

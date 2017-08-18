@@ -4,7 +4,6 @@
   <%= f.inputs do %>
     <%= f.input :title %>
     <%= f.input :body, as: :ckeditor %>
-    <%= file_field_tag "images[]", type: :file, multiple: true %>
     <% end %>
   <%= f.actions %>
 <% end %>

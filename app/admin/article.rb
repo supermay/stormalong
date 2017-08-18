@@ -1,6 +1,7 @@
 ActiveAdmin.register Article do
   form partial: "form"
   permit_params :title, :body, :created_at, :updated_at, photos: []
+  config.batch_actions = false
 
 index do
    column :title do |article|
