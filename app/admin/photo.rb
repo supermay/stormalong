@@ -39,6 +39,7 @@ index do
  end
 
  controller do
+
    def update
      update! do |format|
        format.html { redirect_to edit_admin_article_path(resource.article_id) }
@@ -57,11 +58,10 @@ index do
      end
    end
 
-
  end
 
 
-
+  config.filters = false
 
 
 

@@ -34,12 +34,16 @@ end
      end
     end
   end
+
+  filter :title
+  filter :created_at
+
+  # config.batch_actions = true
+  # batch_action :flag do |ids|
+  #   batch_action_collection.find(ids).each do |article|
+  #     article.flag! :hot
+  #   end
+  #   redirect_to admin_articles_path, alert: "The articles have been flagged!"
+  # end
+
 end
-
-
- # sidebar "Details", only: :show do
- #   attributes_table_for article do
- #     row :title
- #     row :body
- #   end
- # end
