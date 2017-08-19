@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -71,3 +72,4 @@ gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'activeadmin-poro-decorator'
+gem 'friendly_id', '~> 5.1'

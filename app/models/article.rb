@@ -6,4 +6,8 @@ class Article < ApplicationRecord
   def self.recent(number)
     Article.last(number).reverse
   end
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end
