@@ -14,8 +14,4 @@ class ArticleSerializer < ActiveModel::Serializer
     object.photos.order(featured: :desc)
   end
 
-  def id
-    object.slug
-  end
-
 end
