@@ -1,10 +1,6 @@
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :date, :updated_at, :photos
+  attributes :id, :title, :body, :date, :updated_at, :photos, :lat, :lng
   has_many :photos
-
-  def something
-    # still empty
-  end
 
   def date
     object.created_at.to_date

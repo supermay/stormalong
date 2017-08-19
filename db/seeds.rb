@@ -56,6 +56,7 @@ pic15 = Photo.create!(article: test_article_5, featured: false, remote_image_url
 pic16 = Photo.create!(article: test_article_5, featured: false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806527/stormalong/Screen_Shot.png")
 
 test_article_6 = Article.create!(title: "About us",
+lat: 37.778519, lng: -122.405640,
 body: "<p>&nbsp;</p> <p><meta charset='utf-8' /></p>
 <p dir='ltr'> Enerzijds, Niels (1987), kon al eerder zwemmen dan lopen,
 dat soort type. Daarnaast Linette (1991) 24 jaar opgegroeid in Maastricht,
