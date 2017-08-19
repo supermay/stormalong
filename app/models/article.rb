@@ -3,6 +3,9 @@ class Article < ApplicationRecord
 
   accepts_nested_attributes_for :photos
   # attr_accessor :title, :body, :photos
+
+  validates :title, presence: true, uniqueness: true
+
   def self.recent(number)
     Article.last(number).reverse
   end

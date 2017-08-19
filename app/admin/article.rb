@@ -14,7 +14,7 @@ index do
    column :updated_at
   #  column :photos
    column do |article|
-     links = link_to "Edit", edit_admin_article_path(article)
+     links = link_to "Edit", edit_admin_article_path(article.id)
      links += "  "
      links += link_to "Delete", admin_article_path(article), :method => :delete, data: { confirm: "Are you sure?" }
      links
@@ -46,6 +46,7 @@ end
         format.html { redirect_to edit_admin_article_path(resource.id) }
       end
     end
+
 
   end
 
