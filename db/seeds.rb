@@ -72,7 +72,7 @@
 # met de ervaring die ik toen had. Eenmaal weer in Nederland aangekomen
 # begon het Niels natuurlijk enorm te kriebelen, misschien had hij nu wel
 # een meisje gevonden die geschikt was om zijn dromen (de wereld rondvaren)
-# na te jagen.....  </p> <p dir='ltr'>Na veel lezen over andere schepen o.a.
+# na te jagen..... </p> <p dir='ltr'>Na veel lezen over andere schepen o.a.
 # Duende, de Blauwe Pinguin, de Pinta was mijn nieuwsgierigheid en reislust
 # toch ook wel geprikkeld! Dit resulteerde in de aankoop van een 25jarige
 # stale schone &quot;Stormalong&quot; een van de stadt caribbean 40, deze
