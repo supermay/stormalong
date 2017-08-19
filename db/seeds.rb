@@ -3,26 +3,27 @@ AdminUser.destroy_all
 Photo.destroy_all
 Article.destroy_all
 
-no_pic_article = Article.create!(title: "I have no pics", body: "I have absolutely no pics")
-test_article = Article.create!(title: "Test article 1", body: "I am a test with 3 pics")
+no_pic_article = Article.create!(title: "I have no pics", body: "I have absolutely no pics", lat:"" , lng:"" )
+
+test_article = Article.create!(title: "Test article 1", body: "I am a test with 3 pics", lat:"", lng:"")
 
 pic1 = Photo.create!(article: test_article, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502718958/stormalong/IMG_0271.jpg")
 pic2 = Photo.create!(article: test_article, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502718961/stormalong/image2.jpg")
 pic3 = Photo.create!(article: test_article, featured:true, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502718959/stormalong/IMG_0274.jpg")
 
-test_article_2 = Article.create!(title: "Test article 2", body: "I am a test with 3 pics")
+test_article_2 = Article.create!(title: "Test article 2", body: "I am a test with 3 pics", lat: "52.93043015", lng: "4.72000122")
 
 pic4 = Photo.create!(article: test_article_2, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/image4.jpg")
 pic5 = Photo.create!(article: test_article_2, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806173/stormalong/IMG_0044.jpg")
 pic6 = Photo.create!(article: test_article_2, featured:true, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/IMG_0211.jpg")
 
-test_article_3 = Article.create!(title: "Test article 3", body: "I am a test with 3 pics")
+test_article_3 = Article.create!(title: "Test article 3", body: "I am a test with 3 pics", lat: "51.02757634", lng: "2.3840332")
 
 pic7 = Photo.create!(article: test_article_3, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/IMG_0268.jpg")
 pic8 = Photo.create!(article: test_article_3, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/IMG_0269.jpg")
 pic9 = Photo.create!(article: test_article_3, featured:true, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/IMG_0272.jpg")
 
-test_article_4 = Article.create!(title: "Test article 4", body: "I am a test with 3 pics")
+test_article_4 = Article.create!(title: "Test article 4", body: "I am a test with 3 pics", lat: "49.75287993", lng: "0.39001465")
 
 pic10 = Photo.create!(article: test_article_4, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806176/stormalong/IMG_0410.jpg")
 pic11 = Photo.create!(article: test_article_4, featured:false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806175/stormalong/IMG_0411.jpg")
@@ -49,14 +50,13 @@ Inhoud&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;1758 cc
 <br /> Windgenerator air x 400w<br /> 60 amp dynamo met mastervolt regelaar
 <br /> En een mastervolt easy display om alle accu&rsquo;s in de gaten te houden
 </p> <p><strong>Navigatieapparatuur</strong><br />
-B&amp;G triton display &nbsp;</p>")
+B&amp;G triton display &nbsp;</p>", lat: "43.37311218", lng: "-8.39355469")
 
 pic14 = Photo.create!(article: test_article_5, featured: true, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502973467/stormalong/Lijnenplan.jpg")
 pic15 = Photo.create!(article: test_article_5, featured: false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502973466/stormalong/Specificaties.png")
 pic16 = Photo.create!(article: test_article_5, featured: false, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806527/stormalong/Screen_Shot.png")
 
 test_article_6 = Article.create!(title: "About us",
-lat: 37.778519, lng: -122.405640,
 body: "<p>&nbsp;</p> <p><meta charset='utf-8' /></p>
 <p dir='ltr'> Enerzijds, Niels (1987), kon al eerder zwemmen dan lopen,
 dat soort type. Daarnaast Linette (1991) 24 jaar opgegroeid in Maastricht,
@@ -77,7 +77,7 @@ na te jagen..... </p> <p dir='ltr'>Na veel lezen over andere schepen o.a.
 Duende, de Blauwe Pinguin, de Pinta was mijn nieuwsgierigheid en reislust
 toch ook wel geprikkeld! Dit resulteerde in de aankoop van een 25jarige
 stale schone &quot;Stormalong&quot; een van de stadt caribbean 40, deze
-dame zal ons moeten helpen deze dromen te verwezenlijken.</p> ")
+dame zal ons moeten helpen deze dromen te verwezenlijken.</p> ", lat: "18.14585177", lng: "-69.78515625")
 
 pic17 = Photo.create!(article: test_article_6, featured: true, remote_image_url: "http://res.cloudinary.com/lorenzocloudinary/image/upload/v1502806174/stormalong/IMG_0211.jpg")
 
