@@ -5,7 +5,7 @@ class Api::ArticlesController < ApplicationController
   end
 
   def show
-    article = Article.friendly.find(params[:id])
+    article = Article.find(params[:id])
 
     render status: 200, json: article
   end
