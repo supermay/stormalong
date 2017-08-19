@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :photos
   end
 
+  match "*path", to: redirect('/'), via: :get
+
 end
