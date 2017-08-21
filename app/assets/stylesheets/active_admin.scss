@@ -10,12 +10,18 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+$skinActiveColor: #43e8c2;
+$skinHeaderBck: #43e8c2;
+$panelHeaderBck: #43e8c2;
+$skinLogo: url("boat-icon.png") no-repeat 0 0;
 
+@import "active_skin";
 div.cke_inner.cke_reset {
   float:left;
   margin-left: 20%;
   width:80%;
 }
+
 
 .delete_btn {
   display: inline;
@@ -36,4 +42,32 @@ div.cke_inner.cke_reset {
 
 .cke_chrome {
   border: 0px !important;
+}
+
+h1#site_title.site_title {
+  text-indent: initial;
+  padding-left: 25px;
+  font-size: 200%;
+}
+
+#title_bar .action_items span.action_item > a {
+  font-size: 150%;
+}
+
+span.action_items {
+  font-size: 150%;
+}
+
+ #header ul.tabs > li > a {
+  font-size: 150%;
+}
+
+ .panel > h3,
+ #main_content > div > div.column > div > div > ul > li > a {
+   font-size: 150%;
+ }
+
+#main_content > div > div > div > div > div > span > a > img {
+  padding-left: 27px;
+  padding-right: 27px;  
 }
