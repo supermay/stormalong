@@ -3,16 +3,16 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "admin/dashboard#index"
   devise_scope :user do
-    get "/users/sign_up", :to => "articles#index"
+    get "/users/sign_up", :to => "admin/dashboard#index"
   end
-  devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :articles
-  resources :photos
 
   namespace :api do
-    resources :articles
-    resources :photos
+    resources :articles, only: [:index, :show]
+    resources :photos, only: [:index, :show]
   end
+
+  match '*path', to: redirect('/'), via: :get
 
 end
