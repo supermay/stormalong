@@ -1,5 +1,5 @@
 class ArticleSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :date, :updated_at, :photos, :lat, :lng
+  attributes :id, :title, :body, :date, :created_at, :updated_at, :photos, :lat, :lng
   has_many :photos
 
   def date
