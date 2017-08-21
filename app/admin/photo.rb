@@ -14,15 +14,12 @@ permit_params :image, :featured, :article_id, :description, :created_at, :update
 # end
 
 index do
-  column :id do |photo|``
+  column :id do |photo|
     link_to "#{photo.id}", "/admin/photos/#{photo.id}"
   end
-
   column :article do |photo|
     link_to Article.find(photo.article_id).title, admin_article_path(photo.article_id)
   end
-
-
    column :description
    column :featured
    column :image do |photo|
@@ -37,6 +34,21 @@ index do
      links += link_to "Delete", admin_photo_path(photo), :method => :delete, data: { confirm: "Are you sure?" }
      links
    end
+ end
+
+ show do |photo|
+  attributes_table do
+    row :image do
+      image_tag(resource.image.thumbnail)
+    end
+    row :description
+    row :featured
+    row :created_at
+    row :updated_at
+    row :article do
+      link_to Article.find(photo.article_id).title, admin_article_path(photo.article_id)
+    end
+  end
  end
 
  controller do
