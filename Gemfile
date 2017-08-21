@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'activeadmin'
 gem 'ckeditor'
 gem 'gmaps4rails'
+gem 'nokogiri', '~> 1.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
