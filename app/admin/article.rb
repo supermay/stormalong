@@ -38,6 +38,8 @@ end
    attributes_table do
      row :title
      row :body
+     row :lat
+     row :lng
      article.photos.each do |photo|
        row :photo do
          link_to image_tag(photo.image.thumbnail), admin_article_photo_path(article,photo)
