@@ -3,8 +3,8 @@
 
   <%= f.inputs do %>
     <%= f.input :title %>
-    <%= f.input :lat %>
-    <%= f.input :lng %>
+    <%= f.input :lat, input_html: {value: "#{@latitude}"}  %>
+    <%= f.input :lng, input_html: {value: "#{@longitude}"}  %>
     <%= f.input :body, as: :ckeditor %>
     <% end %>
   <%= f.actions %>

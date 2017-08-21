@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     doc = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:4199684/mmsi:244670249/vessel:STORMALONG"))
     find_this = doc.css('.details_data_link')
     string = find_this[0].children
-    lat, lng  = string.gsub(/[\ °]/,"").split('/')
+    @lat, @lng  = string.gsub(/[\ °]/,"").split('/')
   end
 
 #

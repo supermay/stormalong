@@ -54,6 +54,11 @@ end
 
   controller do
 
+    def new
+      get_position
+      @article = Article.new
+    end
+
     def create
       create! do |format|
         format.html { redirect_to edit_admin_article_path(resource.id) }
@@ -64,9 +69,8 @@ end
       require 'open-uri'
       require 'nokogiri'
       doc = Nokogiri::HTML(open("https://www.marinetraffic.com/en/ais/details/ships/shipid:4199684/mmsi:244670249/vessel:STORMALONG"))
-      find_this = doc.css('.details_data_link')
-      string = find_this[0].children
-      lat, lng  = string.gsub(/[\ °]/,"").split('/')
+      string = doc.css('.details_data_link')[0].children.text
+      @latitude, @longitude  = string.gsub(/[\ °]/,"").split('/')
     end
 
   end
