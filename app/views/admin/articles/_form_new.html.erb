@@ -6,6 +6,7 @@
     <%= f.input :lat, input_html: {value: "#{@latitude}"}  %>
     <%= f.input :lng, input_html: {value: "#{@longitude}"}  %>
     <%= f.input :body, as: :ckeditor %>
+    <%= f.input :published %>
     <% end %>
   <%= f.actions %>
 <% end %>
