@@ -10,12 +10,18 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
+$skinActiveColor: #43e8c2;
+$skinHeaderBck: #43e8c2;
+$panelHeaderBck: #43e8c2;
+$skinLogo: url("boat-icon.png") no-repeat 0 0;
 
+@import "active_skin";
 div.cke_inner.cke_reset {
   float:left;
   margin-left: 20%;
   width:80%;
 }
+
 
 .delete_btn {
   display: inline;
@@ -36,4 +42,64 @@ div.cke_inner.cke_reset {
 
 .cke_chrome {
   border: 0px !important;
+}
+
+h1#site_title.site_title {
+  text-indent: initial;
+  padding-left: 25px;
+  font-size: 200%;
+}
+
+#title_bar .action_items span.action_item > a {
+  font-size: 150%;
+}
+
+span.action_items {
+  font-size: 150%;
+}
+
+ #header ul.tabs > li > a {
+  font-size: 150%;
+}
+
+ // .panel > h3,
+ // #main_content > div > div.column > div > div > ul > li > a {
+ //   font-size: 150%;
+ // }
+
+#main_content > div > div > div > div > div > span > a > img {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+// log in page
+#login > h2 {
+  font-size: 150%;
+}
+
+#admin_user_email_input, #admin_user_password_input, #admin_user_remember_me_input, #session_new > fieldset.actions  {
+  font-size: 150%;
+}
+// admin user index page
+// #index_table_admin_users > thead > tr > th > a, #admin_user_1 > td {
+//   font-size: 150%;
+// }
+// article index page
+// #index_table_articles {
+//   font-size: 150%;
+// }
+// new article page
+// #new_article > fieldset.inputs {
+//   font-size: 150%;
+// }
+// #article_submit_action {
+//   font-size: 150%;
+// }
+// edit article page
+// #edit_article_10 > fieldset {
+//   font-size: 150%;
+// }
+
+
+#active_admin_content {
+  font-size: 150% ;
 }

@@ -32,30 +32,32 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     columns do
-      column do
+
+      column max_width: "25%", min_width: "25%" do
         panel "Recent Articles" do
           ul do
-            Article.recent(3).map do |article|
+            Article.recent(10).map do |article|
               li link_to(article.title, admin_article_path(article))
             end
           end
         end
       end
-    end
 
-    columns do
-      column do
+      column max_width: "75%", min_width: "73%" do
         panel "Recent Photos" do
-          ul do
-            Photo.recent(5).map do |photo|
-              li link_to image_tag(photo.image.thumbnail), admin_article_photo_path(photo.article_id,photo)
-              li photo.description
+          div do
+            Photo.recent(4).map do |photo|
+              span link_to image_tag(photo.image.thumbnail, :height => '260', :width => '240'), admin_article_photo_path(photo.article_id,photo)
             end
           end
         end
       end
+
     end
+
   end
+
+
 end
 
 
