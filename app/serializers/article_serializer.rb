@@ -3,7 +3,7 @@ class ArticleSerializer < ActiveModel::Serializer
   has_many :photos
 
   def date
-    object.created_at.to_date
+    reversed_date = object.created_at.to_date.strftime('%d-%m-%Y')
   end
 
   def photos

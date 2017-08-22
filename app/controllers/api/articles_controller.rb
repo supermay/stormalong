@@ -1,6 +1,7 @@
 class Api::ArticlesController < ApplicationController
   def index
-    articles = Article.all.order(created_at: :desc)
+    ordered_articles = Article.all.order(created_at: :desc)
+    articles = ordered_articles.select{ |a| a.published == true}
     render status: 200, json: articles
   end
 
