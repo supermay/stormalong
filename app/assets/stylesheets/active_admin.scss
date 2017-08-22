@@ -62,12 +62,44 @@ span.action_items {
   font-size: 150%;
 }
 
- .panel > h3,
- #main_content > div > div.column > div > div > ul > li > a {
-   font-size: 150%;
- }
+ // .panel > h3,
+ // #main_content > div > div.column > div > div > ul > li > a {
+ //   font-size: 150%;
+ // }
 
 #main_content > div > div > div > div > div > span > a > img {
-  padding-left: 27px;
-  padding-right: 27px;  
+  padding-left: 35px;
+  padding-right: 35px;
+}
+// log in page
+#login > h2 {
+  font-size: 150%;
+}
+
+#admin_user_email_input, #admin_user_password_input, #admin_user_remember_me_input, #session_new > fieldset.actions  {
+  font-size: 150%;
+}
+// admin user index page
+// #index_table_admin_users > thead > tr > th > a, #admin_user_1 > td {
+//   font-size: 150%;
+// }
+// article index page
+// #index_table_articles {
+//   font-size: 150%;
+// }
+// new article page
+// #new_article > fieldset.inputs {
+//   font-size: 150%;
+// }
+// #article_submit_action {
+//   font-size: 150%;
+// }
+// edit article page
+// #edit_article_10 > fieldset {
+//   font-size: 150%;
+// }
+
+
+#active_admin_content {
+  font-size: 150% ;
 }
